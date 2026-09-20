@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: excel-date-report-backend
+    runtime: node
+    rootDir: backend
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      # Set this to your deployed Vercel URL after the frontend is live,
+      # e.g. https://your-app.vercel.app (comma-separate multiple origins).
+      - key: CORS_ORIGIN
+        sync: false
